@@ -26,7 +26,6 @@ For a quick help call ReAdW.exe without any arguments.
 ReAdW [options] <raw file path> [<output file>]
 
  Options
-  --mzXML:         mzXML mode (default)
 
   --centroid, -c: Centroid all scans (MS1 and MS2)
       meaningful only if data was acquired in profile mode;
@@ -36,7 +35,7 @@ ReAdW [options] <raw file path> [<output file>]
       "filterline" text; only use this if you have a good reason!
       Otherwise, the program first will try to obtain a more accurate
        mass from the "Monoisotopic M/Z:" "trailer value"
-  --compress, -z: Use zlib for compressing peaks
+  --nocompress, -n: Use zlib for compressing peaks
       default: off
   --verbose, -v:   verbose
   --gzip, -g:   gzip the output file (independent of peak compression)
@@ -48,7 +47,7 @@ ReAdW [options] <raw file path> [<output file>]
 
 Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
 
-      ReAdW --mzXML -c C:\test\input.raw c:\test\output.mzXML
+      ReAdW --compress C:\test\input.raw c:\test\output.mzXML
 ```
 
 ## Converting multiple files

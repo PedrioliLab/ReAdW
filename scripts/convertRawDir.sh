@@ -41,7 +41,7 @@ do
 	if [ ! -e ../mzXML/${BASE_NAME}.mzXML ]
 	then
 		echo "Converting ${RAW_FILE}"
-		wine ${PATH_TO_READW}/ReAdW.exe -c --mzXML ${RAW_FILE} ; mv ${BASE_NAME}.mzXML ../mzXML
+		wine ${PATH_TO_READW}/ReAdW.exe ${RAW_FILE} ; mv ${BASE_NAME}.mzXML ../mzXML
 	fi
 done
 
