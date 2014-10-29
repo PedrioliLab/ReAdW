@@ -14,6 +14,8 @@ Two binaries are available depending on which dependency is installed on your sy
 - The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201411.msfilereader.exe)
 - The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201411.xcalibur.exe)
 
+Note: the binaries have been tested to work under wine on \*nix like systems.
+
 ## Compilation
 ReAdW can be compiled from source using Visual Studio 2010.
 
