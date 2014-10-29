@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReAdW", "ReAdW.vcxproj", "{59DD013F-DD57-4D82-8468-4D6BDB0500B9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0137730D-7640-4484-94CE-465952478A6D} = {0137730D-7640-4484-94CE-465952478A6D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib123-dll\zlib.vcxproj", "{0137730D-7640-4484-94CE-465952478A6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59DD013F-DD57-4D82-8468-4D6BDB0500B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59DD013F-DD57-4D82-8468-4D6BDB0500B9}.Debug|Win32.Build.0 = Debug|Win32
+		{59DD013F-DD57-4D82-8468-4D6BDB0500B9}.Release|Win32.ActiveCfg = Release|Win32
+		{59DD013F-DD57-4D82-8468-4D6BDB0500B9}.Release|Win32.Build.0 = Release|Win32
+		{0137730D-7640-4484-94CE-465952478A6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0137730D-7640-4484-94CE-465952478A6D}.Debug|Win32.Build.0 = Debug|Win32
+		{0137730D-7640-4484-94CE-465952478A6D}.Release|Win32.ActiveCfg = Release|Win32
+		{0137730D-7640-4484-94CE-465952478A6D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

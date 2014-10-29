@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{59DD013F-DD57-4D82-8468-4D6BDB0500B9}</ProjectGuid>
+    <RootNamespace>ReAdW</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Files\Code\ReAdW;C:\Files\Code\ReAdW\common;C:\Files\Code\ReAdW\mzXML\common;C:\Files\Code\ReAdW\zlib123-dll;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_AFXDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Files\Code\ReAdW\winlibs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>zlib123-dll;mzXML\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>zlib123-dll\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>zLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/NODEFAULTLIB:library %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FilterLine.cpp" />
+    <ClCompile Include="mzXML\common\Base64.cpp" />
+    <ClCompile Include="mzXML\common\ConverterArgs.cpp" />
+    <ClCompile Include="mzXML\common\gzstream.cpp" />
+    <ClCompile Include="mzXML\common\MassSpecXMLWriter.cpp" />
+    <ClCompile Include="mzXML\common\MSTypes.cpp" />
+    <ClCompile Include="mzXML\common\MSUtilities.cpp" />
+    <ClCompile Include="mzXML\common\mzXMLWriter.cpp" />
+    <ClCompile Include="mzXML\common\Scan.cpp" />
+    <ClCompile Include="mzXML\common\ScanConverter.cpp" />
+    <ClCompile Include="mzXML\common\SHA1.cpp" />
+    <ClCompile Include="mzXML\common\SimpleXMLWriter.cpp" />
+    <ClCompile Include="ReAdW.cpp" />
+    <ClCompile Include="ThermoInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\zLib\zlib.h" />
+    <ClInclude Include="FilterLine.h" />
+    <ClInclude Include="mzXML\common\Array.h" />
+    <ClInclude Include="mzXML\common\Base64.h" />
+    <ClInclude Include="mzXML\common\constants.h" />
+    <ClInclude Include="mzXML\common\ConverterArgs.h" />
+    <ClInclude Include="mzXML\common\gzstream.h" />
+    <ClInclude Include="mzXML\common\hooks_tpp.h" />
+    <ClInclude Include="mzXML\common\InstrumentInfo.h" />
+    <ClInclude Include="mzXML\common\InstrumentInterface.h" />
+    <ClInclude Include="mzXML\common\MassSpecXMLWriter.h" />
+    <ClInclude Include="mzXML\common\MSTypes.h" />
+    <ClInclude Include="mzXML\common\MSUtilities.h" />
+    <ClInclude Include="mzXML\common\mzXMLWriter.h" />
+    <ClInclude Include="mzXML\common\Scan.h" />
+    <ClInclude Include="mzXML\common\ScanCentroider.h" />
+    <ClInclude Include="mzXML\common\ScanConverter.h" />
+    <ClInclude Include="mzXML\common\SHA1.h" />
+    <ClInclude Include="mzXML\common\SimpleXMLWriter.h" />
+    <ClInclude Include="mzXML\common\spectStrct.h" />
+    <ClInclude Include="mzXML\common\sysdepend.h" />
+    <ClInclude Include="mzXML\common\TPPVersion.h" />
+    <ClInclude Include="mzXML\common\tpp_hashmap.h" />
+    <ClInclude Include="mzXML\common\tpp_tarball.h" />
+    <ClInclude Include="mzXML\common\util.h" />
+    <ClInclude Include="mzXML\common\wglob.h" />
+    <ClInclude Include="ReAdW.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="ThermoInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ReAdW.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fish.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
