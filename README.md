@@ -3,6 +3,7 @@ ReAdW
 
 ## Description
 Convert ThermoFinningan RAW mass spectrometry files to the mzXML format[1].
+Originally a part of the [Trans-Proteomic Pipeline](http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP)
 
 ## Dependencies
 ReAdW requires either Xcalibur or MSFileReader to be installed or minimally just the three DLLs: XRawfile2.dll, fileio.dll, fregistry.dll.  
