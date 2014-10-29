@@ -16,6 +16,38 @@ Two binaries are available depending on which dependency is installed on your sy
 ## Compilation
 ReAdW can be compiled from source using Visual Studio 2010.
 
+## Usage
+For a quick help call ReAdW.exe without any arguments.
+
+```
+ReAdW [options] <raw file path> [<output file>]
+
+ Options
+  --mzXML:         mzXML mode (default)
+
+  --centroid, -c: Centroid all scans (MS1 and MS2)
+      meaningful only if data was acquired in profile mode;
+      default: off
+  [Advanced option, default OFF] --precursorFromFilterLine: only
+      try to get the precursor MZ value from the Thermo
+      "filterline" text; only use this if you have a good reason!
+      Otherwise, the program first will try to obtain a more accurate
+       mass from the "Monoisotopic M/Z:" "trailer value"
+  --compress, -z: Use zlib for compressing peaks
+      default: off
+  --verbose, -v:   verbose
+  --gzip, -g:   gzip the output file (independent of peak compression)
+
+  output file: (Optional) Filename for output file;
+      if not supplied, the output file will be created
+      in the same directory as the input file.
+
+
+Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
+
+      ReAdW --mzXML -c C:\test\input.raw c:\test\output.mzXML
+```
+
 ## Converting multiple files
 Save the following code in a .bat file (e.g. convertall.bat) in a directory with a bunch of raw files you want to convert.
 
