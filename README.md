@@ -50,7 +50,7 @@ Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
 ```
 
 ## Converting multiple files
-**On a Windows system**
+**On a Windows system**  
 Save the following code in a .bat file (e.g. convertall.bat) in a directory with a bunch of raw files you want to convert.
 
     @echo off
@@ -61,7 +61,7 @@ You will need to rename your ReAdW binary to ReAdW.exe and place it in the same 
 Remove the "--compress" option if you don't want to zlib compress the peaklists.
 Remove the "--centroid" option if you don't want to centroid peaks.
 
-**On a \*nix system**
+**On a \*nix system**  
 To run ReAdW on a \*nix like system you will first need to install wine.  
 
 Next follow these steps:
