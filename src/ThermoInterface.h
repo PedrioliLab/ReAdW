@@ -32,13 +32,28 @@
 #include "mzXML/common/InstrumentInterface.h"
 #include "FilterLine.h"
 
-// uncomment the appropriate "#define XRAWFILE_DLL" below to build for
-// Thermo vs. MSFileReader and 32 vs. 64 bit dll
+// uncomment "#define MSFILEREADER to use Thermo Foundation DLL, otherwise will use MSFileReader DLLs
+// uncomment "define BIT64" to use 32-bit DLLs, otherwise will use 64-bit DLLs
+#define MSFILEREADER
+//#define BIT64
 
+#ifdef MSFILEREADER
+// will use MSFILEREADER
+#ifdef BIT64
+#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2_x64.dll"   //32-bit MSFileReader
+#else
+#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2.dll"       //64-bit MSFileReader
+#endif
+// done with MSFILEREADER
+#else
+// will use Thermo
+#ifdef BIT64
+#define XRAWFILE_DLL "C:\Program Files (x86)\Thermo\Foundation\XRawfile2.dll"   //64-bit Thermo
+#else
 #define XRAWFILE_DLL "C:\Program Files\Thermo\Foundation\XRawfile2.dll"         //32-bit Thermo
-//#define XRAWFILE_DLL "C:\Program Files (x86)\Thermo\Foundation\XRawfile2.dll"   //64-bit Thermo
-//#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2_x64.dll"   //32-bit MSFileReader
-//#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2.dll"       //64-bit MSFileReader
+#endif
+// done with Thermo
+#endif
 
 #import XRAWFILE_DLL rename_namespace("XRawfile")
 using namespace XRawfile;
