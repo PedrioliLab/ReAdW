@@ -101,7 +101,7 @@ Scan::Scan() {
 
 	// thermo scans only:
 	isThermo_ = false;
-	thermoFilterLine_ = "";
+	thermoFilterLine_.clear();
 
 	// MassLynx scans only
 	isMassLynx_ = false;

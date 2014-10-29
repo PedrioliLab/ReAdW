@@ -32,24 +32,22 @@
 #include "mzXML/common/InstrumentInterface.h"
 #include "FilterLine.h"
 
-#ifdef MSFILEREADER
-//#import "MSFileReader.XRawfile2.dll" rename_namespace("XRawfile")
-#import "C:\Program Files\Thermo\MSFileReader\XRawfile2.dll" rename_namespace("XRawfile")
+// uncomment the appropriate "#define XRAWFILE_DLL" below to build for
+// Thermo vs. MSFileReader and 32 vs. 64 bit dll
+
+#define XRAWFILE_DLL "C:\Program Files\Thermo\Foundation\XRawfile2.dll"         //32-bit Thermo
+//#define XRAWFILE_DLL "C:\Program Files (x86)\Thermo\Foundation\XRawfile2.dll"   //64-bit Thermo
+//#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2_x64.dll"   //32-bit MSFileReader
+//#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2.dll"       //64-bit MSFileReader
+
+#import XRAWFILE_DLL rename_namespace("XRawfile")
 using namespace XRawfile;
-#else
-//#import "XRawfile.XRawfile2.dll" rename_namespace("XRAWFILE2Lib")
-#import "C:\Program Files\Thermo\Foundation\XRawfile2.dll" rename_namespace("XRAWFILE2Lib")
-using namespace XRAWFILE2Lib;
-#endif
 
 typedef struct _datapeak
 {
 	double dMass;
 	double dIntensity;
 } DataPeak;
-
-
-
 
 
 class ThermoInterface : public InstrumentInterface {

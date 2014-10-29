@@ -47,7 +47,6 @@ void usage(const string& exename, const string& version) {
 	cout << endl << exename << " " << version << endl << endl;
 	cout << "Usage: " << exename << " [options] <raw file path> [<output file>]" << endl << endl
 		<< " Options\n"
-		<< "  --mzXML:         mzXML mode (default)" << endl
 		<< endl
 		<< "  --centroid, -c: Centroid all scans (MS1 and MS2)" << endl
 		<< "      meaningful only if data was acquired in profile mode;"  << endl
@@ -57,8 +56,8 @@ void usage(const string& exename, const string& version) {
 		<< "      \"filterline\" text; only use this if you have a good reason!" << endl
 		<< "      Otherwise, the program first will try to obtain a more accurate" << endl
 		<< "       mass from the \"Monoisotopic M/Z:\" \"trailer value\"" << endl 
-		<< "  --compress, -z: Use zlib for compressing peaks" << endl
-		<< "      default: off" << endl
+		<< "  --nocompress, -n: Do not use zlib for compressing peaks" << endl
+		<< "      default: on" << endl
 		<< "  --verbose, -v:   verbose" << endl
 		<< "  --gzip, -g:   gzip the output file (independent of peak compression)" << endl
 		<< endl
@@ -68,7 +67,7 @@ void usage(const string& exename, const string& version) {
 		<< endl
 		<< endl
 		<< "Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans" << endl << endl
-		<< "      " << exename << " --mzXML -c C:\\test\\input.raw c:\\test\\output.mzXML" << endl << endl
+		<< "      " << exename << " --centroid C:\\test\\input.raw c:\\test\\output.mzXML" << endl << endl
 		<< "Author: Natalie Tasman (SPC/ISB), with Jimmy Eng, Brian Pratt, and Matt Chambers," << endl
 		<< "      based on orignal work by Patrick Pedriolli." << endl;
 }

@@ -611,6 +611,7 @@ std::string toString(MSIonizationType ionization) {
 			break;
 		case TSP:
 			str = "TSP";
+			break;
 		case FD:
 			str = "FD";
 			break;
@@ -698,6 +699,7 @@ std::string toOBOText(MSIonizationType ionization) {
 			break;
 		case TSP:
 			str = "TSP";
+			break;
 		case FD:
 			str = "field desorption";
 			break;

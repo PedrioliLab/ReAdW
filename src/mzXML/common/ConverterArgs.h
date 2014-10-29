@@ -37,7 +37,6 @@ public:
 	bool verbose;
 	bool lockspray;
 	bool shotgunFragmentation;
-	bool mzMLMode;
 	bool mzXMLMode;
 	bool forcePrecursorFromFilterLine; // if true, only get the precursorMZ from the Thermo "filterLine" text
 	// experimental:

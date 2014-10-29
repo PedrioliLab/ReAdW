@@ -39,12 +39,11 @@ using namespace std;
 
 ConverterArgs::ConverterArgs() {
 	centroidScans = false;
-	compressScans = false;
+	compressScans = true;
 	verbose = false;
 	lockspray = true;
 	shotgunFragmentation = false;
-	mzMLMode = false;
-	mzXMLMode = false;
+	mzXMLMode = true;
 	forcePrecursorFromFilterLine = false;
 	// experimental:
 	threshold = false;
@@ -78,8 +77,6 @@ ConverterArgs::printArgs(void) {
 		}
 	}
 	cout
-		<< "  mzML mode: " << mzMLMode << endl
-		<< "  mzXML mode: " << mzXMLMode << endl
 		<< "  input filename: " << inputFileName << endl
 		<< "  output filename: " << outputFileName << endl
 		<< "  output file as gzip: " << gzipOutputFile << endl
@@ -89,30 +86,19 @@ ConverterArgs::printArgs(void) {
 bool 
 ConverterArgs::parseArgs(int argc, char* argv[]) {
 	int curArg = 1;
+
 	for( curArg = 1 ; curArg < argc ; ++curArg ) {
 		if (*argv[curArg] == '-') {
-			if (strcmp(argv[curArg], "-c") == 0) {
+			if (strcmp(argv[curArg], "-c") == 0 || strcmp(argv[curArg], "--centroid") == 0) {
 				centroidScans = true;
 			}
-			else if (strcmp(argv[curArg], "--centroid") == 0) {
-				centroidScans = true;
+			else if (strcmp(argv[curArg], "-n") == 0 || strcmp(argv[curArg], "--nocompress") == 0) {
+				compressScans = false;
 			}
-			else if (strcmp(argv[curArg], "-z") == 0 ) { 
-				compressScans = true;
-			}
-			else if (strcmp(argv[curArg], "--compress") == 0) {
-				compressScans = true;
-			}
-			else if (strcmp(argv[curArg], "-g") == 0) {
+			else if (strcmp(argv[curArg], "-g") == 0|| strcmp(argv[curArg], "--gzip") == 0) {
 				gzipOutputFile = true;
 			}
-			else if (strcmp(argv[curArg], "--gzip") == 0) {
-				gzipOutputFile = true;
-			}
-			else if (strcmp(argv[curArg], "-v") == 0 ) { 
-				verbose = true;
-			}
-			else if (strcmp(argv[curArg] , "--verbose") == 0) {
+			else if (strcmp(argv[curArg], "-v") == 0 || strcmp(argv[curArg] , "--verbose") == 0) {
 				verbose = true;
 			}
 			else if (strcmp(argv[curArg] , "--precursorFromFilterLine") == 0) {
@@ -123,12 +109,6 @@ ConverterArgs::parseArgs(int argc, char* argv[]) {
 			}
 			else if (strcmp(argv[curArg], "--nolockspray") == 0) {
 				lockspray = false;
-			}
-			else if(strcmp( argv[curArg] , "--mzXML") == 0) {
-				mzXMLMode = true;
-			}
-			else if (strcmp(argv[curArg] , "--mzML") == 0) {
-				mzMLMode = true;
 			}
 			else if (strcmp(argv[curArg] , "--TD") == 0) {
 				threshold = true;
@@ -161,15 +141,6 @@ ConverterArgs::parseArgs(int argc, char* argv[]) {
 		}
 	}
 
-	if (mzMLMode && mzXMLMode) {
-		cerr << "  error: only one of mzXML or mzML mode can be selected" << endl;
-		return false;
-	}
-	else if (!(mzXMLMode || mzMLMode)) {
-		cerr << "  error: either mzXML or mzML mode must be selected" << endl;
-		return false;
-	}
-
 	if (curArg > argc-1) {
 		cerr << "  error: no input file specified" << endl;
 		return false;
@@ -188,12 +159,7 @@ ConverterArgs::parseArgs(int argc, char* argv[]) {
 		}
 		else {
 			outputFileName = inputFileName.substr(0, dotPos);
-			if (mzMLMode) {
-				outputFileName += ".mzML";
-			}
-			else if (mzXMLMode) {
-				outputFileName += ".mzXML";
-			}
+			outputFileName += ".mzXML";
 		}
 	} else {
 		outputFileName = argv[curArg];

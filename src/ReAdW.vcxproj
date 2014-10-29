@@ -99,7 +99,6 @@
     <ClCompile Include="ThermoInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\zLib\zlib.h" />
     <ClInclude Include="FilterLine.h" />
     <ClInclude Include="mzXML\common\Array.h" />
     <ClInclude Include="mzXML\common\Base64.h" />
@@ -127,15 +126,13 @@
     <ClInclude Include="mzXML\common\wglob.h" />
     <ClInclude Include="ReAdW.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="resource1.h" />
-    <ClInclude Include="StdAfx.h" />
     <ClInclude Include="ThermoInterface.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ReAdW.rc" />
+    <None Include="fish.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fish.ico" />
+    <ResourceCompile Include="ReAdW.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
