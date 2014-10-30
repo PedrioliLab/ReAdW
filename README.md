@@ -55,11 +55,11 @@ Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
 Save the following code in a .bat file (e.g. convertall.bat) in a directory with a bunch of raw files you want to convert.
 
     @echo off
-    for %%i in (*.RAW) do ReAdW.exe --mzXML --compress --centroid %%i
+    for %%i in (*.RAW) do ReAdW.exe --centroid %%i
 
 Double click on the .bat file to convert each of them using ReAdW.  
 You will need to rename your ReAdW binary to ReAdW.exe and place it in the same directory or edit the previous code to reference your specific ReAdW binary.
-Remove the "--compress" option if you don't want to zlib compress the peaklists.
+Add the "--nocompress" option if you don't want to zlib compress the peaklists.
 Remove the "--centroid" option if you don't want to centroid peaks.
 
 **On a \*nix system**  
