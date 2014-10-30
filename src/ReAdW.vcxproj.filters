@@ -2,146 +2,153 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="mzXML\common\Base64.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\ConverterArgs.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FilterLine.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\gzstream.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\MassSpecXMLWriter.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\MSTypes.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\MSUtilities.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\mzXMLWriter.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ReAdW.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\Scan.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\ScanConverter.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\SHA1.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mzXML\common\SimpleXMLWriter.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ThermoInterface.cpp">
-      <Filter>Source files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mzXML\common\Array.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\Base64.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\constants.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\ConverterArgs.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FilterLine.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\gzstream.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\hooks_tpp.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\InstrumentInfo.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\MassSpecXMLWriter.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\InstrumentInterface.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\MSTypes.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\MSUtilities.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\mzXMLWriter.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ReAdW.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\Scan.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\ScanCentroider.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\ScanConverter.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\SHA1.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\SimpleXMLWriter.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\spectStrct.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\sysdepend.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ThermoInterface.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\tpp_tarball.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\TPPVersion.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\util.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\wglob.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mzXML\common\tpp_hashmap.h">
-      <Filter>Header files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ReAdW.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="fish.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Header files">
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1a7da80b-c03b-40ca-a5d9-2253c18a6b5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
       <UniqueIdentifier>{d6bee133-4118-4052-9f7f-96cd2e5662cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source files">
+    <Filter Include="Source Files">
       <UniqueIdentifier>{429acacc-0820-4195-824a-450e9f6bd321}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fish.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ReAdW.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
