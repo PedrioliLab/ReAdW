@@ -1050,6 +1050,9 @@ std::string toString(MSActivationType activation) {
 		case ETD:
 			str = "ETD";
 			break;
+		case ETD_SA:
+			str = "ETD+SA";
+			break;
 		case HCD:
 			str = "HCD";
 			break;

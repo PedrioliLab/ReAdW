@@ -334,7 +334,12 @@ FilterLine::parseActivation(const string& word) {
 		return PQD;
 	}
 	else if (word == "ETD") {
-		return ETD;
+		if( !supplementalActivation_ ) {
+			return ETD;
+		}
+		else {
+			return ETD_SA;
+		}
 	}
 	else if (word == "HCD") {
 		return HCD;

@@ -264,6 +264,7 @@ typedef enum {
 	HCD,		// high energy collision dissociation
 	SA,			// supplemental cid
 	PTR,		// proton transfer reaction
+	ETD_SA,     // ETD with SA
 
 	// added for Waters
 
