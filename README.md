@@ -71,7 +71,7 @@ Next follow these steps:
 - Make sure that your ReAdW executable is called ReAdW.exe
 
 The script will convert all new RAW files in a folder and place the resulting mzXML files in a separate mzXML folder.  
-## Latest changeshttps://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201510.msfilereader.exe
+## Latest changes
 **2015.1.0, 2015/06/28**
 - Add support for ETD+SA.
 
