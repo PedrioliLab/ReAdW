@@ -33,26 +33,12 @@
 #include "FilterLine.h"
 
 // uncomment "#define MSFILEREADER to use Thermo Foundation DLL, otherwise will use MSFileReader DLLs
-// uncomment "define BIT64" to use 32-bit DLLs, otherwise will use 64-bit DLLs
-#define MSFILEREADER
-//#define BIT64
+//#define MSFILEREADER
 
-#ifdef MSFILEREADER
-// will use MSFILEREADER
-#ifdef BIT64
-#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2_x64.dll"   //32-bit MSFileReader
-#else
-#define XRAWFILE_DLL "C:\Program Files\Thermo\MSFileReader\XRawfile2.dll"       //64-bit MSFileReader
-#endif
-// done with MSFILEREADER
-#else
-// will use Thermo
-#ifdef BIT64
-#define XRAWFILE_DLL "C:\Program Files (x86)\Thermo\Foundation\XRawfile2.dll"   //64-bit Thermo
-#else
-#define XRAWFILE_DLL "C:\Program Files\Thermo\Foundation\XRawfile2.dll"         //32-bit Thermo
-#endif
-// done with Thermo
+#ifdef MSFILEREADER  // will use MSFILEREADER
+#define XRAWFILE_DLL "libid:F0C5F3E3-4F2A-443E-A74D-0AABE3237494"
+#else  // will use Thermo
+#define XRAWFILE_DLL "libid:5FE970A2-29C3-11D3-811D-00104B304896"
 #endif
 
 #import XRAWFILE_DLL rename_namespace("XRawfile")

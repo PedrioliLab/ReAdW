@@ -32,9 +32,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 // These strings should be updated for each official release
 //
 #define TPP_RELEASE_NAME "UWPR_MAINTAINED"
-#define TPP_MAJOR_RELEASE_NUMBER 2014
+#define TPP_MAJOR_RELEASE_NUMBER 2015
 #define TPP_MINOR_RELEASE_NUMBER 1
-#define TPP_REV_RELEASE_NUMBER 1
+#define TPP_REV_RELEASE_NUMBER 0
 
 #define TPP_PRODUCT_FULLNAME "Trans Proteomics Pipeline"
 #define TPP_PRODUCT_NAME "TPP"
