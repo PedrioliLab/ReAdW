@@ -7,7 +7,7 @@ Originally a part of the [Trans-Proteomic Pipeline](http://tools.proteomecenter.
 
 ## Dependencies
 ReAdW requires either Xcalibur or MSFileReader to be installed or minimally just the three DLLs: XRawfile2.dll, fileio.dll, fregistry.dll.  
-Here's the link to download Thermo's freely available [MSFileReader](http://sjsupport.thermofinnigan.com/public/detail.asp?id=703).  2015/06/29 unfortunately link is no longer active.
+MSFileReader can be downloaded by creating an account with [ThermoFischer Scientific](https://thermo.flexnetoperations.com/control/thmo/login). Once registered you will find the software under "Utility Software".
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
