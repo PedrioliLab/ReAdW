@@ -97,47 +97,37 @@ void mzXMLWriter::writeDocument(void)
 
 	open("msManufacturer");
 	attr("category", "msManufacturer");
-	attr(
-		"value",
-		toString(instrumentInterface_->instrumentInfo_.manufacturer_));
+	attr("value", toString(instrumentInterface_->instrumentInfo_.manufacturer_));
 	close(); // msManufacturer
 
 	open("msModel");
 	attr("category", "msModel");
-	attr(
-		"value",
-		toString(instrumentInterface_->instrumentInfo_.instrumentModel_));
+	attr("value", instrumentInterface_->instrumentInfo_.strInstrumentModel_);
 	close(); // msModel
 
 	open("msIonisation");
 	attr("category", "msIonisation");
-	attr(
-		"value", 
-		toString(instrumentInterface_->instrumentInfo_.ionSource_));
+	attr("value", toString(instrumentInterface_->instrumentInfo_.ionSource_));
 	close(); // msIonisation
 
 	// todo: deal with more than one analyzer
 	if (instrumentInterface_->instrumentInfo_.analyzerList_.size() == 1) {
 		open("msMassAnalyzer");
 		attr("category", "msMassAnalyzer");
-		attr(
-			"value", 
-			toString(instrumentInterface_->instrumentInfo_.analyzerList_[0]));
+		attr("value", toString(instrumentInterface_->instrumentInfo_.analyzerList_[0]));
 		close(); // msMassAnalyzer
 	}
 
+/* currently always "unknown" so don't bother writing out
 	open("msDetector");
 	attr("category", "msDetector");
-	attr(
-		"value", 
-		toString(instrumentInterface_->instrumentInfo_.detector_)); 
+	attr("value", toString(instrumentInterface_->instrumentInfo_.detector_)); 
 	close(); // msDetector
+*/
 
 	open("software");
 	attr("type", "acquisition");
-	attr(
-		"name", 
-		toString(instrumentInterface_->instrumentInfo_.acquisitionSoftware_));
+	attr("name", toString(instrumentInterface_->instrumentInfo_.acquisitionSoftware_));
 	attr("version", instrumentInterface_->instrumentInfo_.acquisitionSoftwareVersion_);
 	close(); // software
 
@@ -224,9 +214,9 @@ void mzXMLWriter::writeDocument(void)
 			attr("filterLine", curScan->thermoFilterLine_);
 		}
 
-		attr("retentionTime", string("PT") + 
-			toString(curScan->retentionTimeInSec_) + string("S")); // in seconds
-		attr("injectionTime", string("PT") + toString(curScan->injectionTimeInSec_,4)  + string("S"));
+		attr("retentionTime", string("PT") + toString(curScan->retentionTimeInSec_,4) + string("S")); // in seconds
+      if (curScan->injectionTimeInSec_ >= 0.0)
+         attr("injectionTime", string("PT") + toString(curScan->injectionTimeInSec_,4)  + string("S"));
 		attr("lowMz", toString(curScan->minObservedMZ_));
 		attr("highMz", toString(curScan->maxObservedMZ_));
 		attr("basePeakMz", toString(curScan->basePeakMZ_));

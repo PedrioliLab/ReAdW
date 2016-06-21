@@ -201,122 +201,10 @@ bool ThermoInterface::setInputFile(const string& filename) {
 	// get the instrument model
 	BSTR bstrInstModel=NULL;
 	xrawfile2_->GetInstModel(&bstrInstModel);
-	string instModel = toUpper(convertBstrToString(bstrInstModel));
+
+   instrumentInfo_.strInstrumentModel_ = convertBstrToString(bstrInstModel);
 	SysFreeString(bstrInstModel);
-   
-	if (instModel == "LTQ") {
-		instrumentInfo_.instrumentModel_ = LTQ;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LTQ XL") {
-		instrumentInfo_.instrumentModel_ = LTQ_XL;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LTQ FT") {
-		instrumentInfo_.instrumentModel_ = LTQ_FT;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LTQ FT ULTRA") {
-		instrumentInfo_.instrumentModel_ = LTQ_FT_ULTRA;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LTQ ORBITRAP") {
-		instrumentInfo_.instrumentModel_ = LTQ_ORBITRAP;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LTQ ORBITRAP DISCOVERY") {
-		instrumentInfo_.instrumentModel_ = LTQ_ORBITRAP_DISCOVERY;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LTQ ORBITRAP XL") {
-		instrumentInfo_.instrumentModel_ = LTQ_ORBITRAP_XL;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LXQ") {
-		instrumentInfo_.instrumentModel_ = LXQ;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "TSQ QUANTUM ACCESS") {
-		instrumentInfo_.instrumentModel_ = TSQ_QUANTUM_ACCESS;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "TSQ QUANTUM") {
-		instrumentInfo_.instrumentModel_ = TSQ_QUANTUM;
-		instrumentInfo_.manufacturer_ = THERMO_SCIENTIFIC;
-	}
-	else if (instModel == "LCQ") {
-		instrumentInfo_.instrumentModel_ = LCQ;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN; // TODO: verify "finnigan"
-	}
-	else if (instModel == "LCQ ADVANTAGE") {
-		instrumentInfo_.instrumentModel_ = LCQ_ADVANTAGE;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LCQ CLASSIC") {
-		instrumentInfo_.instrumentModel_ = LCQ_CLASSIC;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LCQ DECA") {
-		instrumentInfo_.instrumentModel_ = LCQ_DECA;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}	
-	else if (instModel == "LCQ DECA XP") {
-		instrumentInfo_.instrumentModel_ = LCQ_DECA_XP;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LCQ DECA XP PLUS") {
-		instrumentInfo_.instrumentModel_ = LCQ_DECA_XP_PLUS;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LCQ FLEET") {
-		instrumentInfo_.instrumentModel_ = LCQ_FLEET;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "TSQ VANTAGE STANDARD") {
-		instrumentInfo_.instrumentModel_ = TSQ_VANTAGE_STANDARD;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LTQ VELOS") {
-		instrumentInfo_.instrumentModel_ = LTQ_VELOS;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "LTQ ORBITRAP VELOS") {
-		instrumentInfo_.instrumentModel_ = LTQ_ORBITRAP_VELOS;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "ORBITRAP ELITE") {
-		instrumentInfo_.instrumentModel_ = ORBITRAP_ELITE;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else if (instModel == "Q EXACTIVE ORBITRAP") {
-		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_ORBITRAP;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-   }
-   else if (instModel == "Q EXACTIVE HF ORBITRAP") {
-		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_HF_ORBITRAP;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-   }
-   else if (instModel == "Q EXACTIVE PLUS ORBITRAP") {
-		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_PLUS_ORBITRAP;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-   }
-   else if (instModel == "ORBITRAP FUSION") {
-		instrumentInfo_.instrumentModel_ = ORBITRAP_FUSION;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-   }
-   else if (instModel == "ORBITRAP FUSION LUMOS") {
-		instrumentInfo_.instrumentModel_ = ORBITRAP_FUSION_LUMOS;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-   }
-   else if (instModel == "VELOS PRO") {
-		instrumentInfo_.instrumentModel_ = VELOS_PRO;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
-	else {
-		cout << "unknown instrument model: " << instModel << endl;
-		instrumentInfo_.instrumentModel_ = INSTRUMENTMODEL_UNDEF;
-		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-	}
+
 
 
 	// get instrument name
@@ -543,11 +431,11 @@ Scan* ThermoInterface::getScan(void) {
 		getPrecursorInfo(*curScan, curScanNum_, filterLine);
 	}
 
-
 	// get ion fill time
 	VARIANT varValue;
 	VariantInit(&varValue);
 	xrawfile2_->GetTrailerExtraValueForScanNum(curScanNum_, "Ion Injection Time (ms):" , &varValue);
+
 	if( varValue.vt == VT_R4 ) {
 		curScan->injectionTimeInSec_ = varValue.fltVal / 1000.0;
 	}
@@ -558,6 +446,11 @@ Scan* ThermoInterface::getScan(void) {
 		cerr << "Scan: " << curScanNum_ << " Unexpected type when looking for ion injection time\n";
 		exit(-1);
 	}
+   else {
+      curScan->injectionTimeInSec_ = -1.0;
+  		cerr << "Scan: " << curScanNum_ << " Warning cannot read ion injection time; ignoring\n";
+
+   }
 
 	//
 	// get the m/z intensity pairs list for the current scan

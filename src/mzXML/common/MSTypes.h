@@ -40,8 +40,6 @@ typedef enum {
 	AGILENT
 } MSManufacturerType;
 std::string toString(MSManufacturerType manufacturer);
-std::string toOBO(MSManufacturerType manufacturer);
-
 
 
 typedef enum {
@@ -107,8 +105,6 @@ typedef enum {
 	QSTAR_XL_SYSTEM,
 } MSInstrumentModelType;
 std::string toString(MSInstrumentModelType instrumentModel);
-std::string toOBO(MSInstrumentModelType instrumentModel);
-
 
 
 typedef enum {
@@ -120,8 +116,6 @@ typedef enum {
 	MASSHUNTER
 } MSAcquisitionSoftwareType;
 std::string toString(MSAcquisitionSoftwareType acquisitionSoftware);
-std::string toOBO(MSAcquisitionSoftwareType acquisitionSoftware);
-
 
 
 typedef enum {
@@ -144,8 +138,6 @@ typedef enum {
 	TANDEM_QUAD, // tandem quadrupole
 } MSAnalyzerType;
 std::string toString(MSAnalyzerType analyzer);
-std::string toOBO(MSAnalyzerType analyzer);
-std::string toOBOText(MSAnalyzerType analyzer);
 MSAnalyzerType MSAnalyzerTypeFromString(const std::string &analyzer);
 
 
@@ -154,7 +146,6 @@ typedef enum {
 	DETECTOR_UNDEF = 0,
 } MSDetectorType;
 std::string toString(MSDetectorType detector);
-std::string toOBO(MSDetectorType detector);
 MSDetectorType MSDetectorTypeFromString(const std::string &detector);
 
 typedef enum {
@@ -199,8 +190,6 @@ typedef enum {
 	MS_CHIP,
 } MSIonizationType;
 std::string toString(MSIonizationType ionization);
-std::string toOBO(MSIonizationType ionization);
-std::string toOBOText(MSIonizationType ionization);
 MSIonizationType MSIonizationTypeFromString(const std::string &ionization);
 
 
@@ -251,8 +240,7 @@ typedef enum {
 	TotalIon,
 } MSScanType;
 std::string toString(MSScanType scanType);
-std::string toOBO(MSScanType scanType);
-std::string toOBOText(MSScanType scanType);
+
 
 typedef enum {
 	ACTIVATION_UNDEF = 0,
@@ -275,8 +263,6 @@ typedef enum {
 	// added for Agilent MassHunter
 } MSActivationType;
 std::string toString(MSActivationType activation);
-std::string toOBO(MSActivationType activation);
-std::string toOBOText(MSActivationType activation);
 MSActivationType MSActivationTypeFromString(const std::string &activation);
 
 

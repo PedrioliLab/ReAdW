@@ -36,7 +36,7 @@
 class InstrumentInfo {
 public:
 	MSManufacturerType manufacturer_; // Waters, etc
-	MSInstrumentModelType instrumentModel_; // LTQ Deca, etc
+//	MSInstrumentModelType instrumentModel_; // LTQ Deca, etc
 	MSIonizationType ionSource_; // esi, nsi, etc
 
 	// this is a list, in case of dual mode machines like FT/IT
@@ -49,11 +49,11 @@ public:
 
 	MSAcquisitionSoftwareType acquisitionSoftware_; // xcalibur, masslynx, masshunter, etc
 	std::string acquisitionSoftwareVersion_;
-
+	std::string strInstrumentModel_;
 
 
 	InstrumentInfo(void) : manufacturer_(MANUFACTURER_UNDEF),
-		instrumentModel_(INSTRUMENTMODEL_UNDEF),
+//		instrumentModel_(INSTRUMENTMODEL_UNDEF),
 		ionSource_(IONIZATION_UNDEF),
 		detector_(DETECTOR_UNDEF),
 		acquisitionSoftware_(ACQUISITIONSOFTWARE_UNDEF)

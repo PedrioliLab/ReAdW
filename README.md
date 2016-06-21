@@ -11,8 +11,8 @@ MSFileReader can be downloaded by creating an account with [ThermoFischer Scient
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
-- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201510.msfilereader.exe)
-- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201510.xcalibur.exe)
+- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201610.msfilereader.exe)
+- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201610.xcalibur.exe)
 
 Note: the binaries have been tested to work under wine on \*nix like systems.
 
@@ -72,6 +72,10 @@ Next follow these steps:
 
 The script will convert all new RAW files in a folder and place the resulting mzXML files in a separate mzXML folder.  
 ## Latest changes
+**2016.1.0, 2016/06/21**
+- Remove enumeration of instrument types in code; just pass read instrument type to output
+- If there is an error reading the injection time; do not write out that attribute
+
 **2015.1.0, 2015/06/28**
 - Add support for ETD+SA.
 
