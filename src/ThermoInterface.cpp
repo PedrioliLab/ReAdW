@@ -291,16 +291,24 @@ bool ThermoInterface::setInputFile(const string& filename) {
 	else if (instModel == "Q EXACTIVE ORBITRAP") {
 		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_ORBITRAP;
 		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-    }
-    else if (instModel == "Q EXACTIVE PLUS ORBITRAP") {
+   }
+   else if (instModel == "Q EXACTIVE HF ORBITRAP") {
+		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_HF_ORBITRAP;
+		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
+   }
+   else if (instModel == "Q EXACTIVE PLUS ORBITRAP") {
 		instrumentInfo_.instrumentModel_ = Q_EXACTIVE_PLUS_ORBITRAP;
 		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-    }
-    else if (instModel == "ORBITRAP FUSION") {
+   }
+   else if (instModel == "ORBITRAP FUSION") {
 		instrumentInfo_.instrumentModel_ = ORBITRAP_FUSION;
 		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
-    }
-    else if (instModel == "VELOS PRO") {
+   }
+   else if (instModel == "ORBITRAP FUSION LUMOS") {
+		instrumentInfo_.instrumentModel_ = ORBITRAP_FUSION_LUMOS;
+		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
+   }
+   else if (instModel == "VELOS PRO") {
 		instrumentInfo_.instrumentModel_ = VELOS_PRO;
 		instrumentInfo_.manufacturer_ = THERMO_FINNIGAN;
 	}

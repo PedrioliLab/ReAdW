@@ -33,7 +33,7 @@
 #include "FilterLine.h"
 
 // uncomment "#define MSFILEREADER to use Thermo Foundation DLL, otherwise will use MSFileReader DLLs
-//#define MSFILEREADER
+#define MSFILEREADER
 
 #ifdef MSFILEREADER  // will use MSFILEREADER
 #define XRAWFILE_DLL "libid:F0C5F3E3-4F2A-443E-A74D-0AABE3237494"

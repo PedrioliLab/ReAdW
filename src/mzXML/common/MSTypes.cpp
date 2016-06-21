@@ -155,11 +155,17 @@ std::string toString(MSInstrumentModelType instrumentModel) {
 		case Q_EXACTIVE_ORBITRAP:
 			str = "Q Exactive Orbitrap";
 			break;
+		case Q_EXACTIVE_HF_ORBITRAP:
+			str = "Q Exactive HF Orbitrap";
+			break;
 		case Q_EXACTIVE_PLUS_ORBITRAP:
 			str = "Q Exactive Plus Orbitrap";
 			break;
 		case ORBITRAP_FUSION:
 			str = "Orbitrap Fusion";
+			break;
+		case ORBITRAP_FUSION_LUMOS:
+			str = "Orbitrap Fusion Lumos";
 			break;
 		case VELOS_PRO:
 			str = "Velos Pro";
