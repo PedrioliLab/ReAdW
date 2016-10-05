@@ -11,8 +11,8 @@ MSFileReader can be downloaded by creating an account with [ThermoFischer Scient
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
-- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201610.msfilereader.exe)
-- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.201610.xcalibur.exe)
+- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2016010.msfilereader.exe)
+- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2016010.xcalibur.exe)
 
 Note: the binaries have been tested to work under wine on \*nix like systems.
 
