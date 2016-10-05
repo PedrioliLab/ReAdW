@@ -16,6 +16,9 @@ Two binaries are available depending on which dependency is installed on your sy
 
 Note: the binaries have been tested to work under wine on \*nix like systems.
 
+## Docker
+A Dockerized version of ReAdW is available [here](https://github.com/PedrioliLab/docker-readw)
+
 ## Compilation
 ReAdW can be compiled from source using Visual Studio 2010.
 
