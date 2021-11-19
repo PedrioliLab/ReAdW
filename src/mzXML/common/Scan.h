@@ -113,6 +113,7 @@ public:
 	bool accuratePrecursorMZ_;
 	double precursorIntensity_;
 	double collisionEnergy_;  // for MSn, this refers to the collision which produced the nth level fragment
+	double precursorIsolationWidth_;
 
 	// for thermo scans only
 	bool isThermo_;

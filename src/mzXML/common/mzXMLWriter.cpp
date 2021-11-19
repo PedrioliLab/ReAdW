@@ -261,6 +261,9 @@ void mzXMLWriter::writeDocument(void)
 				if (curScan->activation_ != ACTIVATION_UNDEF) {
 					attr("activationMethod", toString(curScan->activation_));
 				}
+				if (curScan->precursorIsolationWidth_ > 0) {
+					attr("windowWideness", toString(curScan->precursorIsolationWidth_));
+				}
 				data(toString(curScan->precursorMZ_, 11));
 				close(); // precursorMz
 				condenseAttr_ = false;

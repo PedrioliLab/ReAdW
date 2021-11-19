@@ -621,6 +621,28 @@ void
 ThermoInterface::getPrecursorInfo(Scan& scan, long scanNumber, FilterLine& filterLine) {
 	// TODO: assert scan->msLevel_ > 1
 
+	VARIANT varValue;
+	VariantInit(&varValue);
+
+	// Isolation width extraction
+	double isolationWidth = 0;
+
+	xrawfile2_->GetTrailerExtraValueForScanNum(curScanNum_, "MS2 Isolation Width:", &varValue);
+
+	if (varValue.vt == VT_R4) {
+		scan.precursorIsolationWidth_ = varValue.fltVal;
+
+	}
+	else if (varValue.vt == VT_R8) {
+		scan.precursorIsolationWidth_ = varValue.dblVal;
+	}
+	else if (varValue.vt != VT_ERROR) {
+		cerr << "Scan: " << curScanNum_ << " MS level: " << scan.msLevel_
+			<< " unexpected type when looking for isolation width\n";
+		exit(-1);
+	}
+	// End isolation width extraction
+
 	if (scanNumber == 1) {
 		// if this is the first scan, only use the info from the filter lin
 		// (API calls are no use, as there's no precursor scan)
@@ -644,9 +666,6 @@ ThermoInterface::getPrecursorInfo(Scan& scan, long scanNumber, FilterLine& filte
 		return;
 	}
 
-	VARIANT varValue;
-	VariantInit(&varValue);
-
 	//
 	// precursor m/z fallbacks
 	// try the Thermo API first, then falling back on the value extracted from the filter line
@@ -661,6 +680,55 @@ ThermoInterface::getPrecursorInfo(Scan& scan, long scanNumber, FilterLine& filte
 
 		double precursorMZ = 0;
 
+		//// TESTING: looking for name of isolation width
+		//long nScan = 12;		// use twelth scan
+		//VARIANT varLabelst;
+		//VariantInit(&varLabelst);
+		//VARIANT varValuest;
+		//VariantInit(&varValuest);
+		//long nArraySizet = 0;
+		//long nRet = xrawfile2_->GetTrailerExtraForScanNum(nScan,
+		//	&varLabelst,
+		//	&varValuest,
+		//	&nArraySizet);
+
+		//// Get a pointer to the SafeArray
+		//SAFEARRAY FAR* psaLabels = varLabelst.parray;
+		//varLabelst.parray = NULL;
+
+		//SAFEARRAY FAR* psaValues = varValuest.parray;
+		//varValuest.parray = NULL;
+
+		//BSTR* pbstrLabels = NULL;
+		//BSTR* pbstrValues = NULL;
+
+		//if (FAILED(SafeArrayAccessData(psaLabels, (void**)(&pbstrLabels))))
+		//{
+		//	SafeArrayUnaccessData(psaLabels);
+		//	SafeArrayDestroy(psaLabels);
+		//}
+
+		//if (FAILED(SafeArrayAccessData(psaValues, (void**)(&pbstrValues))))
+		//{
+		//	SafeArrayUnaccessData(psaLabels);
+		//	SafeArrayDestroy(psaLabels);
+		//	SafeArrayUnaccessData(psaValues);
+		//	SafeArrayDestroy(psaValues);
+		//}
+		//cout << "Isolation test" << endl;
+		//for (long i = 0; i < nArraySizet; i++)
+		//{
+		//	cout << convertBstrToString(pbstrLabels[i]) << "\t" << convertBstrToString(pbstrValues[i]) << endl;
+		//	//cout << ws(pbstrLabels[i], SysStringLen(pbstrLabels[i])) << "\t" << *pbstrValues[i] << endl;
+		//}
+
+		//// Delete the SafeArray
+		//SafeArrayUnaccessData(psaLabels);
+		//SafeArrayDestroy(psaLabels);
+		//SafeArrayUnaccessData(psaValues);
+		//SafeArrayDestroy(psaValues);
+		//cout << endl;
+		//// TEST ENDS
 
 		// don't try to get Monoisotopic M/Z if the user has selected "force precursor from filter line"
 		if (!forcePrecursorFromFilter_) {

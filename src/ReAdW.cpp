@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 	// force the program name to ReAdW,
 	// regardless of what it was called on the command line
 	const char *execName = "ReAdW"; // argv[0];
-	string version = toString(TPP_MAJOR_RELEASE_NUMBER) + "." + toString(TPP_MINOR_RELEASE_NUMBER) + "." + toString(TPP_REV_RELEASE_NUMBER) + "(build "__DATE__" " __TIME__ ")";
+	string version = toString(TPP_MAJOR_RELEASE_NUMBER) + "." + toString(TPP_MINOR_RELEASE_NUMBER) + "." + toString(TPP_REV_RELEASE_NUMBER) + "(build " __DATE__ " " __TIME__ ")";
 
 	if (argc < 2) {
 		// min args: output mode and input file 
