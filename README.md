@@ -6,8 +6,8 @@ Convert ThermoFinningan RAW mass spectrometry files to the mzXML format[1].
 Originally a part of the [Trans-Proteomic Pipeline](http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP)
 
 ## Dependencies
-ReAdW requires either Xcalibur or MSFileReader to be installed or minimally just the three DLLs: XRawfile2.dll, fileio.dll, fregistry.dll.  
-MSFileReader can be downloaded by creating an account with [ThermoFischer Scientific](https://thermo.flexnetoperations.com/control/thmo/login). Once registered you will find the software under "Other Software Releases".
+ReAdW requires either Xcalibur or MSFileReader to be installed or minimally just the three DLLs: XRawfile2_x64.dll, Fileio_x64.dll, fregistry_x64.dll.  
+MSFileReader can be [downloaded from Thermo's GitHub page](https://github.com/thermofisherlsms/MSFileReader); grab the file MSReader_x64.exe.
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
