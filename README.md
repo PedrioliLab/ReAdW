@@ -16,8 +16,8 @@ Note: there is some unknown issue with MSFileReader 3.1 in terms of the DLL bein
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
-- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2016010.msfilereader.exe)
-- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2016010.xcalibur.exe)
+- The MSFileReader compatible is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2023010.msfilereader.exe)
+- The Xcalibur compatible one is [here](https://github.com/PedrioliLab/ReAdW/blob/master/bin/ReAdW.2023010.xcalibur.exe)
 
 Note: the binaries have been tested to work under wine on \*nix like systems.
 
@@ -25,7 +25,7 @@ Note: the binaries have been tested to work under wine on \*nix like systems.
 A Dockerized version of ReAdW is available [here](https://github.com/PedrioliLab/docker-readw)
 
 ## Compilation
-ReAdW can be compiled from source using Visual Studio 2010.
+ReAdW can be compiled from source using Visual Studio 2019.
 
 ## Usage
 For a quick help call ReAdW.exe without any arguments.
