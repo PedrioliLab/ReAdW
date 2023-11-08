@@ -514,6 +514,10 @@ FilterLine::parse(string filterLine) {
 		s >> w;
 	}
 
+	// for Astral, "cv=" string after ionization mode
+	if (w.rfind("CV=", 0) == 0) {
+		s >> w;
+	}
 
 
 	bool advance = false;

@@ -10,7 +10,9 @@ ReAdW requires either Xcalibur or MSFileReader to be installed or minimally just
 
 MSFileReader can be [downloaded from Thermo's GitHub page](https://github.com/thermofisherlsms/MSFileReader); grab the file MSReader_x64.exe.  
 
-Alternatively, MSFileReader can be downloaded by creating a [free account with ThermoFischer Scientific](https://thermo.flexnetoperations.com/control/thmo/login). Once registered you will find the software under "Other Releases > Release Archive".  Try installing MSFileReader_3.0_SP3.exe if the MSReader_x64.exe from the GitHub repository above isn't working with ReAdW.  (Install MSFileReader_3.0_SP3.exe directly followed by installing MSReader_x64.exe without uninstalling MSFileReader_3.0_SP3.exe.)
+Alternatively, MSFileReader can be downloaded by creating a [free account with ThermoFischer Scientific](https://thermo.flexnetoperations.com/control/thmo/login). Once registered you will find the software under "Other Releases > Release Archive".
+
+Note: there is some unknown issue with MSFileReader 3.1 in terms of the DLL being registered/recognized.  The work-around is to first install MSFileReader_3.0_SP3.exe followed by installing MSReader_x64.exe without uninstalling MSFileReader_3.0_SP3.exe.
 
 ## Binaries
 Two binaries are available depending on which dependency is installed on your system:
@@ -29,7 +31,7 @@ ReAdW can be compiled from source using Visual Studio 2010.
 For a quick help call ReAdW.exe without any arguments.
 
 ```
-ReAdW [options] <raw file path> [<output file>]
+Usage: ReAdW [options] <raw file path> [<output file>]
 
  Options
 
@@ -41,8 +43,8 @@ ReAdW [options] <raw file path> [<output file>]
       "filterline" text; only use this if you have a good reason!
       Otherwise, the program first will try to obtain a more accurate
        mass from the "Monoisotopic M/Z:" "trailer value"
-  --nocompress, -n: Use zlib for compressing peaks
-      default: off
+  --nocompress, -n: Do not use zlib for compressing peaks
+      default: on
   --verbose, -v:   verbose
   --gzip, -g:   gzip the output file (independent of peak compression)
 
@@ -53,7 +55,7 @@ ReAdW [options] <raw file path> [<output file>]
 
 Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans
 
-      ReAdW --compress C:\test\input.raw c:\test\output.mzXML
+      ReAdW --centroid C:\test\input.raw c:\test\output.mzXML
 ```
 
 ## Converting multiple files
@@ -78,6 +80,9 @@ Next follow these steps:
 
 The script will convert all new RAW files in a folder and place the resulting mzXML files in a separate mzXML folder.  
 ## Latest changes
+**2023.1.0, 2023/11/08**
+- Add support for Orbitrap Astral data (accounting for "cv=" text in the filter line).
+
 **2016.1.0, 2016/06/21**
 - Remove enumeration of instrument types in code; just pass read instrument type to output
 - If there is an error reading the injection time; do not write out that attribute

@@ -69,7 +69,7 @@ void usage(const string& exename, const string& version) {
 		<< "Example: convert input.raw file to output.mzXML, centroiding MS1 and MS2 scans" << endl << endl
 		<< "      " << exename << " --centroid C:\\test\\input.raw c:\\test\\output.mzXML" << endl << endl
 		<< "Author: Natalie Tasman (SPC/ISB), with Jimmy Eng, Brian Pratt, and Matt Chambers," << endl
-		<< "      based on orignal work by Patrick Pedriolli." << endl;
+		<< "        based on orignal work by Patrick Pedriolli." << endl << endl;
 }
 
 
@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 	// force the program name to ReAdW,
 	// regardless of what it was called on the command line
 	const char *execName = "ReAdW"; // argv[0];
-	string version = toString(TPP_MAJOR_RELEASE_NUMBER) + "." + toString(TPP_MINOR_RELEASE_NUMBER) + "." + toString(TPP_REV_RELEASE_NUMBER) + "(build "__DATE__" " __TIME__ ")";
+	string version = toString(TPP_MAJOR_RELEASE_NUMBER) + "." + toString(TPP_MINOR_RELEASE_NUMBER) + "." + toString(TPP_REV_RELEASE_NUMBER) + " (build " + __DATE__ + " " + __TIME__ + ")";
 
 	if (argc < 2) {
 		// min args: output mode and input file 
